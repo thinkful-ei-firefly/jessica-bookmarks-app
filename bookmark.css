@@ -1,0 +1,93 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 10px;
+}
+
+h1 {
+    font-size: 40px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+
+}
+
+.listItem {
+    border: 2px solid darkgray;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+
+}
+
+.title {
+    display: inline-block;
+    font-size: 20px;
+}
+
+.rating {
+    display: inline-block;
+
+}
+
+.expand {
+    display: inline-block;
+}
+
+.description {
+    display: block;
+    border: 1px solid lightgray;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 5px;
+}
+
+.url {
+    margin-top: 10px;
+}
+
+#filterForm {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.header {
+    border: 2px solid darkgray;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 20px;
+
+}
+
+#addNewForm {
+    margin-top: 10px;
+    
+}
+
+input {
+    margin-top: 3px;
+    margin-bottom: 3px;
+}
+
+#newRating {
+    margin-top: 3px;
+    margin-bottom: 3px;
+}
+
+
+#newDesc {
+    display: block;
+    width: 100%;
+    height: 50px;
+}
+
+.itemHeader {
+    display: flex;
+    justify-content: space-between;
+}
+
+button {
+    width: 80px;
+    height: 25px;
+}

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://meyerweb.com/eric/tools/css/reset/reset.css">
+    <link rel="stylesheet" href="bookmark.css">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <div class="header">
+
+            <h1>My Bookmarks</h1>
+
+            <form id="filterForm">
+                <label for="minRating">Filter by Rating:</label>
+                <select id="minRating">
+                    <option value="0">--Unfiltered--</option>
+                    <option value="1">1 Star</option>
+                    <option value="2">2 Stars</option>
+                    <option value="3">3 Stars</option>
+                    <option value="4">4 Stars</option>
+                    <option value="5">5 Stars</option>
+                </select>
+            </form>
+
+            <section id="addNew">
+                <button type="button" id="addNewToggle">Add New</button>
+                <!--HTML is added here by JS-->
+            </section>
+
+        </div>
+    </header>
+
+    <main>
+        <ul id="bookmarkList">
+            <!--HTML is added here by JS-->
+        </ul>
+    </main>
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/cuid/1.3.8/browser-cuid.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="store.js"></script>
+    <script type="text/javascript" src="api.js"></script>
+    <script type="text/javascript" src="bookmark.js"></script>
+    <script type="text/javascript" src="index.js"></script>
+    
+</body>
+</html>
