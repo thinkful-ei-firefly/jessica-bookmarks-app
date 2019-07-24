@@ -31,13 +31,14 @@ const bookmark = function () {
 
   //creates & returns HTML for one bookmark object
   const generateBookmark = function (bookmark) {
+    const stars = generateStars(bookmark.rating);
     if (bookmark.expanded) {
       return `
       <li class="expanded" data-id="${bookmark.id}">
         <div class="listItem">
           <div class="itemHeader">
             <h2 class="title">${bookmark.title}</h2>
-            <span class="rating">Rating: ${bookmark.rating}</span>
+            <span class="rating">${stars}</span>
             <button type="button" class="toggleSize">Condense</button>
           </div>
           <p class="url"><a href="${bookmark.url}">${bookmark.url}</a></p>
@@ -52,13 +53,30 @@ const bookmark = function () {
         <div class="listItem">
           <div class="itemHeader">
             <h2 class="title">${bookmark.title}</h2>
-            <span class="rating">Rating: ${bookmark.rating}</span>
+            <span class="rating">${stars}</span>
             <button type="button" class="toggleSize">Expand</button>
           </div>
         </div>
       </li>
       `;
     }
+  };
+
+  const generateStars = function (rating) {
+    switch (rating) {
+    case 1:
+      return '<i class="fas fa-star"></i>';
+    case 2:
+      return '<i class="fas fa-star"></i><i class="fas fa-star"></i>';
+    case 3:
+      return '<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>';
+    case 4:
+      return '<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>';
+    case 5:
+      return '<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>';
+
+    }
+
   };
 
 
