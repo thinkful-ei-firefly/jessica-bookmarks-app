@@ -172,15 +172,10 @@ const bookmark = function () {
       event.preventDefault();
       api.deleteItem(id)
         .then(res => {
-          store.empty();
-        })
-        .then(res => {
-          store.fill();
-        })
-        .then(res => {
+          console.log(res);
+          store.deleteItem(id);
           render();
         });
-
 
     });
   };

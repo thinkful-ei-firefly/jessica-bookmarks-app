@@ -6,8 +6,6 @@ const store = function () {
   const bookmarks = [];
   let minRating = 0;
   let adding = false;
-  let showError = false;
-  let errorMessage = '';
 
 
   //calls the API to get all items and adds them to the store, then re-renders the page
@@ -23,6 +21,10 @@ const store = function () {
 
   const empty = function () {
     store.bookmarks = [];
+  };
+
+  const deleteItem = function(id) {
+    store.bookmarks = store.bookmarks.filter(bookmark => bookmark.id !== id);
   };
 
 
@@ -61,10 +63,9 @@ const store = function () {
     bookmarks,
     minRating,
     adding,
-    showError,
-    errorMessage,
     fill,
     empty,
+    deleteItem,
     addItem,
     toggleAdding,
     findById,
