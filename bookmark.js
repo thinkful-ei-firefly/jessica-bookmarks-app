@@ -124,7 +124,7 @@ const bookmark = function () {
 
   //listens for changes to minRating, updates value of "minRating" in store, re-renders
   const handleFilter = function () {
-    $('select#minRating').on('click', event => {
+    $('select#minRating').on('change', event => {
       console.log('bookmark.handleFilter ran!');
       const val = $(event.currentTarget).val();
       store.minRating = val;
