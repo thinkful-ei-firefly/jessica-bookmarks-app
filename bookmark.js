@@ -5,7 +5,7 @@ const bookmark = function () {
 
   //generates HTML data from the store and re-renders the header and body with generated content
   const render = function () {
-    console.log('bookmark.render ran!');
+    
     let bookmarks = store.bookmarks;
     bookmarks = bookmarks.filter(bookmark => bookmark.rating >= store.minRating);
     
@@ -87,11 +87,11 @@ const bookmark = function () {
       <form id="addNewForm">
 
         <label for="newTitle">Page Title:</label>
-        <input type="text" name="title" id="newTitle" required>
+        <input type="text" name="title" id="newTitle" placeholder="Your Favorite Site" required>
         <br>
         
         <label for="newUrl">URL:</label>
-        <input type="url" name="url" id="newUrl" required>
+        <input type="url" name="url" id="newUrl" placeholder="http://www.your-site.com" required>
         <br>
 
         <label for="newRating">Rating:</label>
@@ -125,7 +125,6 @@ const bookmark = function () {
   //listens for changes to minRating, updates value of "minRating" in store, re-renders
   const handleFilter = function () {
     $('select#minRating').on('change', event => {
-      console.log('bookmark.handleFilter ran!');
       const val = $(event.currentTarget).val();
       store.minRating = val;
       render();
@@ -138,9 +137,8 @@ const bookmark = function () {
 
   //listens for click on "Add New" or "Cancel" buttons, updates value of "adding" in store, re-renders
   const handleAdding = function () {
-    console.log('bookmark.handleAdding ready!');
     $('#addNew').on('click', '#addNewToggle', function () {
-      console.log('bookmark.handleAdding ran!');
+    
       store.toggleAdding();
       render();
     });
@@ -153,7 +151,6 @@ const bookmark = function () {
   const handleAddNewSubmit = function () {
     $('section#addNew').on('submit', 'form#addNewForm', event => {
       event.preventDefault();
-      console.log('bookmark.handleAddNewSubmit ran!');
       let form = document.getElementById('addNewForm');
       let formData = new FormData(form);
       let object = {};
@@ -172,9 +169,7 @@ const bookmark = function () {
 
   //listens for click on "Expand" or "Condense" buttons, toggles "expanded" value on item, re-renders
   const handleExpandCondense = function () {
-    console.log('bookmark.handleExpandCondense ready!');
     $('#bookmarkList').on('click', '.toggleSize', event => {
-      console.log('bookmark.handleExpandCondense ran!');
       const id = getIdFromBookmark(event.currentTarget);
       store.toggleExpanded(id);
       render();
@@ -188,12 +183,10 @@ const bookmark = function () {
     $('#bookmarkList').on('click', '.delete', event => {
       const id = getIdFromBookmark(event.currentTarget);
       event.preventDefault();
-      api.deleteItem(id)
-        .then(res => {
-          console.log(res);
-          store.deleteItem(id);
-          render();
-        });
+      api.deleteItem(id);
+      store.deleteItem(id);
+      render();
+        
 
     });
   };
